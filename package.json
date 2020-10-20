@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "example.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fukumotomasashi/nodejs-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fukumotomasashi/nodejs-test/issues"
+  },
+  "homepage": "https://github.com/fukumotomasashi/nodejs-test#readme"
+}
