@@ -47,8 +47,8 @@
 var express = require("express");
 var app = express();
 
-// サーバー
-app.listen(3000)
+app.set('port', (process.env.Port || 5000))
+
 // ビューエンジンにejsを設定
 app.set('view engine', 'ejs');
 // ルートにアクセスした時にindex.ejsを返す設定
@@ -56,3 +56,6 @@ app.get("/", function(req, res, next){
 	res.render("index", {});
 });
 
+app.listen(app.get('port'), function() {
+  console.log("Node app is running at localhost:" + app.get('port'))
+});
