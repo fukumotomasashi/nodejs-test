@@ -1,2 +1,2 @@
-web: node example.js
+web: node main.js
 
