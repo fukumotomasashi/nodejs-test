@@ -2,6 +2,13 @@ var http = require('http'); //httpモジュール呼び出し
 var express = require("express");
 var app = express();
 var path = require("path")
+express()
+  // .use(express.static(path.join(__dirname, 'public')))
+  .set('views', path.join(__dirname, 'views'))
+  .set('view engine', 'ejs')
+  .get('/', (req, res) => res.render('index'))
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
 // var server = http.createServer(function (request, response) {
 //     // リクエストを受けると以下のレスポンスを送信する
 //     // response.writeHead(200, {'Content-Type': 'text/plain'}); //レスポンスヘッダーに書き込み
