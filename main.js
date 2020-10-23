@@ -48,7 +48,7 @@ var express = require("express");
 var app = express();
 var path = require("path")
 
-app.set('port', (process.env.Port || 5000))
+app.set('port', (process.env.Port || 8000))
 
 // テンプレートが格納されているフォルダを指定する
 app.set('views', path.join(__dirname, './views/'))
@@ -60,5 +60,5 @@ app.get("/", function(req, res, next){
 });
 
 app.listen(app.get('port'), function() {
-  console.log("Node app is running at localhost:" + app.get('port'))
+  console.log("App is running on port :" + app.get('port'))
 });
