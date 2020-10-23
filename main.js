@@ -46,9 +46,12 @@
 
 var express = require("express");
 var app = express();
+var path = require("path")
 
 app.set('port', (process.env.Port || 5000))
 
+// テンプレートが格納されているフォルダを指定する
+app.set('views', path.join(__dirname, './views/'))
 // ビューエンジンにejsを設定
 app.set('view engine', 'ejs');
 // ルートにアクセスした時にindex.ejsを返す設定
