@@ -1,7 +1,8 @@
 var http = require('http'); //httpモジュール呼び出し
 var express = require("express");
-var app = express();
+// var app = express();
 var path = require("path")
+const PORT = process.env.PORT || 5000
 express()
   // .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
@@ -67,17 +68,17 @@ express()
 // var app = express();
 // var path = require("path")
 
-app.set('port', (process.env.Port || 5000))
+// app.set('port', (process.env.Port || 5000))
 
-// テンプレートが格納されているフォルダを指定する
-app.set('views', path.join(__dirname, './views/'))
-// ビューエンジンにejsを設定
-app.set('view engine', 'ejs');
-// ルートにアクセスした時にindex.ejsを返す設定
-app.get("/", function(req, res, next){
-	res.render("index");
-});
+// // テンプレートが格納されているフォルダを指定する
+// app.set('views', path.join(__dirname, './views/'))
+// // ビューエンジンにejsを設定
+// app.set('view engine', 'ejs');
+// // ルートにアクセスした時にindex.ejsを返す設定
+// app.get("/", function(req, res, next){
+// 	res.render("index");
+// });
 
-app.listen(app.get('port'), function() {
-  console.log("App is running on port :" + app.get('port'))
-});
+// app.listen(app.get('port'), function() {
+//   console.log("App is running on port :" + app.get('port'))
+// });
