@@ -2,17 +2,15 @@ var http = require('http'); //httpモジュール呼び出し
 var express = require("express");
 var app = express();
 var path = require("path")
+var messageRouter = require('./routes/message');
 const PORT = process.env.PORT || 5000
-// express()
-//   // .use(express.static(path.join(__dirname, 'public')))
-//   .set('views', path.join(__dirname, 'views'))
-//   .set('view engine', 'ejs')
-//   .get('/', (req, res) => res.render('index'))
-//   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'ejs')
-app.get('/', (req, res) => res.render('index'))
-app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
+app.use(express.static(path.join(__dirname, 'public')));
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+app.use('/', messageRouter);
+// app.get('/', (req, res) => res.render('index'))
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
 // var server = http.createServer(function (request, response) {
 //     // リクエストを受けると以下のレスポンスを送信する
@@ -66,23 +64,4 @@ app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 // 	message: '健闘を祈る',
 // }).then(() => {
 // 	console.log('send completed!')
-// });
-
-// var express = require("express");
-// var app = express();
-// var path = require("path")
-
-// app.set('port', (process.env.Port || 5000))
-
-// // テンプレートが格納されているフォルダを指定する
-// app.set('views', path.join(__dirname, './views/'))
-// // ビューエンジンにejsを設定
-// app.set('view engine', 'ejs');
-// // ルートにアクセスした時にindex.ejsを返す設定
-// app.get("/", function(req, res, next){
-// 	res.render("index");
-// });
-
-// app.listen(app.get('port'), function() {
-//   console.log("App is running on port :" + app.get('port'))
 // });
