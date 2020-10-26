@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- <script src="../../public/javascripts/message.js"></script> -->
+	</head>
+	<body>
+		<button class="btn" type="button" name="linenotify" value="健闘を祈る">送信</button>
+		<script type="text/javascript">
+
+			function sendMessage() {
+				var url = 'https://frozen-sea-13497.herokuapp.com/post'
+				fetch(url, {
+					method: 'POST',
+					mode: 'no-cors'
+				}).then((res) => {
+					if (res.ok) {
+						console.log('OK')
+					} else {
+						console.log('bad')
+					}
+				})
+			}
+			var btn = document.querySelector('.btn');
+			btn.addEventListener('click', sendMessage)
+		</script>
+	</body>
+</html>

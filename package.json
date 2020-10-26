@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-		"start": "node main.js",
+    "start": "node main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/fukumotomasashi/nodejs-test#readme",
   "dependencies": {
     "axios": "^0.16.2",
+    "cors": "^2.8.5",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "line-notify-nodejs": "^1.0.0",
