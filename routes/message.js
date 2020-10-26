@@ -18,7 +18,7 @@ router.post('/post', (req, res) => {
 					'Authorization': `Bearer ${LINE_TOKEN}`
 			},
 			data: qs.stringify({
-					message: `こんばんわ`,
+					message: `第３ハードルのテスト by まさお`,
 			})
 	};
 
@@ -30,13 +30,13 @@ router.post('/post', (req, res) => {
 			console.log(error);
 	});
 
-	const lineNotify = require('line-notify-nodejs')('O8T0r4dDkWbO5y9ujb3Sg6F3j63zoD8wdEgSTLPzo1c')
+	// const lineNotify = require('line-notify-nodejs')('O8T0r4dDkWbO5y9ujb3Sg6F3j63zoD8wdEgSTLPzo1c')
 
-	lineNotify.notify({
-		message: '第３ハードルのテスト',
-	}).then(() => {
-		console.log('send completed!')
-	});
+	// lineNotify.notify({
+	// 	message: message,
+	// }).then(() => {
+	// 	console.log('send completed!')
+	// });
 });
 
 module.exports = router;
