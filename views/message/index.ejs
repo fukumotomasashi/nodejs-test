@@ -1,27 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<!-- <script src="../../public/javascripts/message.js"></script> -->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
 	</head>
 	<body>
-		<button class="btn" type="button" name="linenotify" value="健闘を祈る">送信</button>
-		<script type="text/javascript">
-
-			function sendMessage() {
-				var url = 'https://frozen-sea-13497.herokuapp.com/post'
-				fetch(url, {
-					method: 'POST',
-					mode: 'no-cors'
-				}).then((res) => {
-					if (res.ok) {
-						console.log('OK')
-					} else {
-						console.log('bad')
-					}
-				})
-			}
-			var btn = document.querySelector('.btn');
-			btn.addEventListener('click', sendMessage)
-		</script>
+		<form action="/message" method="POST" id="line_message">
+			<input type="text" name="message" id="message">
+			<input type="submit" value="送信" id="btn">
+		</form>
+		<script src="/javascripts/message.js"></script>
 	</body>
 </html>
