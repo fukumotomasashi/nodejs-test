@@ -1,6 +1,6 @@
 const axios = require('axios');
 const qs = require('querystring');
-module.exports = function(send_message) {
+module.exports = function(message) {
 	// LINE APIにメッセージを送信するための関数
 	const BASE_URL = 'https://notify-api.line.me';
 	const PATH =  '/api/notify';
